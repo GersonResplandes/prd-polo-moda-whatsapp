@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Protótipos - Polo Moda</title>
+  <style>
+    :root { --ink:#000; --line:#c9d1d8; --soft:#f2f5f7; --pale:#e8f4ec; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Arial, sans-serif; color:var(--ink); background:#fff; }
+    header { padding:22px 30px; border-bottom:1px solid var(--line); }
+    h1 { margin:0 0 6px; font-size:24px; }
+    p { line-height:1.5; }
+    nav { display:flex; gap:8px; flex-wrap:wrap; margin:20px 0; }
+    button { border:1px solid var(--line); background:#fff; color:#000; padding:10px 14px; border-radius:5px; cursor:pointer; }
+    button.active, button:hover { background:#e6e6e6; }
+    main { max-width:1100px; margin:0 auto; padding:24px 30px 50px; }
+    .screen { display:none; border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+    .screen.active { display:block; }
+    .bar { padding:12px 16px; background:#e6e6e6; font-weight:700; }
+    .app { display:grid; grid-template-columns:180px 1fr; min-height:430px; }
+    aside { background:var(--soft); padding:22px 16px; }
+    aside strong { display:block; margin-bottom:20px; }
+    aside div { padding:10px 0; }
+    section.content { padding:28px; }
+    .toolbar { display:flex; justify-content:space-between; align-items:center; gap:14px; }
+    .search { margin:20px 0; padding:12px; background:var(--soft); border-radius:5px; color:#555; }
+    table { width:100%; border-collapse:collapse; }
+    th, td { border-bottom:1px solid var(--line); text-align:left; padding:12px 8px; }
+    th { font-size:13px; }
+    .inbox { display:grid; grid-template-columns:250px 1fr; gap:20px; }
+    .conversation-list, .chat { border:1px solid var(--line); border-radius:6px; padding:16px; }
+    .conversation-list div { padding:14px 0; border-bottom:1px solid var(--line); }
+    .message { padding:12px; background:var(--soft); border-radius:6px; margin:14px 0; }
+    .message.system { background:var(--pale); }
+    .customer-chat { background:var(--pale); padding:24px; border-radius:6px; max-width:680px; }
+    .bubble { background:#fff; padding:13px; border-radius:6px; margin:12px 0; max-width:88%; }
+    .bubble.right { margin-left:auto; }
+    .note { font-size:13px; color:#444; }
+    @media(max-width:700px){ .app,.inbox{grid-template-columns:1fr} aside{display:none} section.content{padding:18px} }
+  </style>
+</head>
+<body>
+  <header><h1>Protótipos navegáveis do sistema</h1><p>Polo Moda Masculina - wireframes de baixa a média fidelidade. Textos em preto padrão.</p><p><a href="https://github.com/GersonResplandes/prd-polo-moda-whatsapp">Ver documentação e código no GitHub</a></p></header>
+  <main>
+    <nav>
+      <button class="active" data-target="catalogo">Painel de catálogo</button>
+      <button data-target="atendimentos">Fila de atendimentos</button>
+      <button data-target="whatsapp">Fluxo no WhatsApp</button>
+    </nav>
+    <div id="catalogo" class="screen active"><div class="bar">Polo Moda | Sistema de atendimento</div><div class="app"><aside><strong>MENU</strong><div>Visão geral</div><div>Catálogo</div><div>Atendimentos</div><div>Configurações</div></aside><section class="content"><div class="toolbar"><h2>Catálogo de produtos</h2><button>+ Novo produto</button></div><div class="search">Buscar por nome ou código</div><table><thead><tr><th>Código</th><th>Produto</th><th>Preço</th><th>Disponibilidade</th></tr></thead><tbody><tr><td>1042</td><td>Vestido Aurora</td><td>R$ 189,90</td><td>Disponível</td></tr><tr><td>1088</td><td>Camisa Linho</td><td>R$ 149,90</td><td>Baixo estoque</td></tr><tr><td>1120</td><td>Calça Siena</td><td>R$ 179,90</td><td>Indisponível</td></tr></tbody></table></section></div></div>
+    <div id="atendimentos" class="screen"><div class="bar">Polo Moda | Sistema de atendimento</div><div class="app"><aside><strong>MENU</strong><div>Visão geral</div><div>Catálogo</div><div>Atendimentos</div><div>Configurações</div></aside><section class="content"><h2>Atendimentos</h2><div class="inbox"><div class="conversation-list"><strong>Conversas recentes</strong><div>Cliente 1 - produto 1042</div><div>Cliente 2 - entrega</div><div>Cliente 3 - atendente</div></div><div class="chat"><strong>Cliente 1 - interesse no produto 1042</strong><div class="message">Cliente: Tenho interesse no produto 1042.</div><div class="message system">Sistema: Vestido Aurora | R$ 189,90<br>Tamanhos: P, M, G | Cores: preto, azul<br>Disponibilidade: disponível</div><div class="message">Cliente: Quero falar com um atendente.</div></div></div></section></div></div>
+    <div id="whatsapp" class="screen"><div class="bar">Polo Moda | Sistema de atendimento</div><div class="app"><aside><strong>MENU</strong><div>Visão geral</div><div>Catálogo</div><div>Atendimentos</div><div>Configurações</div></aside><section class="content"><h2>Atendimento automatizado</h2><div class="customer-chat"><strong>Polo Moda</strong><div class="bubble">Olá! Como posso ajudar? Envie o código do produto.</div><div class="bubble right">Tenho interesse no produto 1042.</div><div class="bubble">Vestido Aurora - R$ 189,90<br>Tamanhos: P, M, G | Cores: preto, azul<br>Status: disponível</div><div class="bubble">[ Falar com atendente ]</div></div></section></div></div>
+    <p class="note">Protótipos para validação de fluxo e requisitos; não representam a identidade visual final do produto.</p>
+  </main>
+  <script>
+    document.querySelectorAll('button[data-target]').forEach(btn => btn.addEventListener('click', () => {
+      document.querySelectorAll('.screen').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('button[data-target]').forEach(el => el.classList.remove('active'));
+      document.getElementById(btn.dataset.target).classList.add('active'); btn.classList.add('active');
+    }));
+  </script>
+</body>
+</html>
